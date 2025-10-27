@@ -278,11 +278,17 @@ export function ContactPage() {
             >
               FIND US ON MAP
             </h2>
-            <div className="bg-gray-200 rounded-lg h-[400px] flex items-center justify-center">
-              <p className="text-gray-600" style={{ fontSize: '16px' }}>
-                Map integration placeholder - Google Maps or similar service would go here
-              </p>
-            </div>
+        <div className="bg-gray-200 rounded-lg h-[400px] overflow-hidden">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7917.445617336976!2d112.71130137770994!3d-7.1580115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd803ce3989025b%3A0x83ee2a47f75acde!2sBalai%20RW%20VI%20Perumnas%20Kamal!5e0!3m2!1sid!2sid!4v1761551241444!5m2!1sid!2sid" // <-- Ini adalah src yang Anda berikan
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
           </motion.div>
         </div>
       </section>
