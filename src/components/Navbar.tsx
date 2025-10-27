@@ -1,6 +1,7 @@
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { useState, useEffect } from "react";
+import appLogo from '../assets/logo-nav.png'
 
 interface NavbarProps {
   currentPage: 'home' | 'about' | 'news' | 'potential' | 'contact' | 'gallery';
@@ -40,9 +41,11 @@ export function Navbar({ currentPage, onNavigate }: NavbarProps) {
             className="shrink-0 cursor-pointer"
             onClick={() => handleNavClick('home')}
           >
-            <h1 className="text-[#1B3A1A] tracking-tight" style={{ fontSize: '28px', fontWeight: 900 }}>
-              DESA CERIA
-            </h1>
+          <img 
+            src={appLogo} 
+            alt="Logo Desa Ceria" 
+            className="h-20 w-20" 
+          />
           </div>
 
           {/* Desktop Navigation */}
