@@ -4,9 +4,10 @@ const multer = require('multer');
 const cors = require('cors');
 const path = require('path');
 const nodemailer = require('nodemailer');
+require('dotenv').config();
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 // MIDDLEWARE 
 app.use(cors());
@@ -25,8 +26,8 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 
-mongoose.connect('mongodb://127.0.0.1:27017/kamal_cerita')
-  .then(() => console.log('✅ KONEKSI SUKSES: Terhubung ke Database kamal_cerita'))
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log('✅ KONEKSI SUKSES'))
   .catch(err => console.error('❌ KONEKSI GAGAL:', err));
 
 
@@ -80,8 +81,8 @@ const ContactModel = mongoose.model('contacts', ContactSchema, 'contacts');
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'ziadramadhan570@gmail.com',
-    pass: 'dglv idci cadt ftau'
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS  
   }
 });
 // Cek Server
